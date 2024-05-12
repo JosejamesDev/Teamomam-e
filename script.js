@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  var card = $('#valentines-day-card');
   var envelope = $('#envelope');
   var btn_open = $("#open");
   var btn_reset = $("#reset");
@@ -18,11 +17,11 @@ $(document).ready(function() {
 
   function openEnvelope() {
     envelope.addClass("open").removeClass("close");
-    card.removeClass("fechar").addClass("open");
+    $('#valentines-day-card').addClass("open");
   }
 
   function closeEnvelope() {
     envelope.removeClass("open").addClass("close");
-    card.removeClass("open").addClass("fechar");
+    $('#valentines-day-card').removeClass("open");
   }
 });

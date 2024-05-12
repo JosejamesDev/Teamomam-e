@@ -280,18 +280,26 @@ body {
 #valentines-day-card {
   cursor: pointer;
   position: absolute;
-  width: 320px; /* Reduzindo o tamanho do cartão */
-  height: 240px; /* Reduzindo o tamanho do cartão */
+  width: 320px;
+  height: 240px;
   background-color: var(--bgCard);
   overflow: hidden;
   border: 10px solid white;
   border-radius: 10px;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
   z-index: 2;
-  top: 0;
+  top: -500px; /* Posição inicial escondida muito longe */
   left: 50%;
   transform: translateX(-50%) scale(0.8); /* Diminuindo o tamanho */
+  transition: top 1s, transform 1s; /* Adicionando transições */
 }
+
+#envelope.open + #valentines-day-card {
+  top: 150px; /* Posição final sobre o envelope */
+  transform: translateX(-50%) scale(1); /* Ajustando o tamanho */
+}
+
+/* Outros estilos */
 
 #valentines-day-card:before {
   content: "";
@@ -485,6 +493,6 @@ body {
 }
 
 .text:hover:before {
-  content: "";
+  content: "Remember not to eat too much candy—you're sweet enough already.";
   font-size: 25px;
 }
